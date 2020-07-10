@@ -35,4 +35,4 @@ bound <- do.call(rbind, bound_list)
 reference_final_df <- as.data.frame(bound)
 final_df <- as.data.frame(reference_final_df[-c(1:3, 8, 18:20, 23:24, 29:30, 37:40, 42, 46:47), ])
 
-# TO-Do: clean up category names, make this into a function, loop it over all the pdfs...somehow
+# TO-Do: clean up category names (add county name to each category?), make this into a function, loop it over all the pdfs...somehow
