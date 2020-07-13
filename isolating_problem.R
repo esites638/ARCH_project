@@ -2,7 +2,8 @@ library(dplyr)
 library(tabulizer)
 install.packages("shiny")
 install.packages("miniUI")
-
+library(shiny)
+library(miniUI)
 
 
 # url of pdf file
@@ -12,6 +13,5 @@ location_colusa <-
 
 tab_vallejo <- extract_tables(location__vallejo, pages = 1:2)
 tab_chico <- extract_tables(location_chico, pages= 1:2)
-tab_colusa <- extract_tables(location_colusa, pages=1:2)
 
-locate_areas(location_colusa)
+tab_colusa <- tabulizer::extract_areas(location_colusa)

@@ -2,8 +2,10 @@ install.packages("tabulizer")
 library(dplyr)
 library(tabulizer)
 
+
+
 # url of pdf file
-location <- 'https://files.hudexchange.info/reports/published/CoC_PopSub_CoC_CA-518-2019_CA_2019.pdf'
+location <- 'https://files.hudexchange.info/reports/published/CoC_PopSub_CoC_CA-523-2019_CA_2019.pdf'
 
 # Extract the tables into a list of 2 matrices, one for each page
 out <- extract_tables(location)
@@ -32,7 +34,13 @@ bound_list <- list(p1_df_clean, p2_df_clean)
 bound <- do.call(rbind, bound_list)
 
 # conver matrix to data frame, clean up rows and columns
-reference_final_df <- as.data.frame(bound)
-final_df <- as.data.frame(reference_final_df[-c(1:3, 8, 18:20, 23:24, 29:30, 37:40, 42, 46:47), ])
+reference_df <- as.data.frame(bound)
+df <- as.data.frame(reference_df[-c(1:3, 8, 18:20, 23:24, 29:30, 37:40, 42, 46:47), ])
 
 # TO-Do: clean up category names (add county name to each category?), make this into a function, loop it over all the pdfs...somehow
+
+df1 <- df %>%
+  mutate(CoC = "Colusa, Glen, Trinity Counties") %>%
+  select("CoC",'pop_category', 'emergency_shelter', 'transitional_housing', 'unsheltered')
+
+

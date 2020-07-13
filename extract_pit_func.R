@@ -32,9 +32,14 @@ extract_pit <- function(url, coc_name){
   reference_df <- as.data.frame(bound)
   df <- as.data.frame(reference_df[-c(1:3, 8, 18:20, 23:24, 29:30, 37:40, 42, 46:47), ])
   
-  # TO-Do: clean up category names (add county name to each category?), make this into a function, loop it over all the pdfs...somehow
+  # TO-Do: deal with the fact that tabulizer doesn't treat the pdfs equally...then apply the function to the list of counties/urls
   
   df1 <- df %>%
-    mutate(CoC = name) %>%
+    mutate(CoC = coc_name) %>%
     select("CoC",'pop_category', 'emergency_shelter', 'transitional_housing', 'unsheltered')
-  }
+  
+  return(df1)
+  
+}
+
+out.matrix <- extract_pit('https://files.hudexchange.info/reports/published/CoC_PopSub_CoC_CA-517-2019_CA_2019.pdf', "Napa City & County")
