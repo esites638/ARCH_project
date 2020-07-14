@@ -1,9 +1,19 @@
-extract_pit <- function(url, coc_name){
+
+# colusa, yolo, el dorado, lake, ventura, glendale: something wrong with names(p1_df_clean) <- headers
+  # colusa, lake: not reading page 1 at all
+  # glendale, tulare, el dorado: not reading first part of page 1
+  # marin, mendocino, tulare, alpine: being read in as 3 pages
+  # ventura (611): not reading page 1 at all 
+# Marin, Mendocino, Tulare, Alpine,  something wrong with # of columns of matrices
+
+
+#extract_pit <- function(url, coc_name){
   # url of pdf file
-  location <- url
+  location <- 'https://files.hudexchange.info/reports/published/CoC_PopSub_CoC_CA-611-2019_CA_2019.pdf'
+  
   
   # Extract the tables into a list of 2 matrices, one for each page
-  out <- extract_tables(location, pages = 1:2)
+  out <- extract_tables(location)
   
   # matrices don't have the same # of columns
   # Column names
@@ -40,7 +50,8 @@ extract_pit <- function(url, coc_name){
   
   return(df1)
   
-}
+#}
 
-out.matrix <- extract_pit('https://files.hudexchange.info/reports/published/CoC_PopSub_CoC_CA-501-2019_CA_2019.pdf', "SF")
+out.matrix <- extract_pit('https://files.hudexchange.info/reports/published/CoC_PopSub_CoC_CA-612-2019_CA_2019.pdf', "Glendale")
 View(out.matrix)
+
