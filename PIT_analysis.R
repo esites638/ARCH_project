@@ -17,7 +17,7 @@ urban_coc = c("Los Angeles", "Santa Clara", "Alameda", "San Francisco")
 
 # convert to long format
 long_Total_homeless_by_CoC  <- long_final_df %>% 
-  filter(pop_category == "Total Homeless Persons", CoC %notin% urban_coc) %>%
+  filter(pop_category == "Total Homeless Persons") %>%
   arrange(CoC)
   
   
