@@ -1,3 +1,5 @@
+# function to extract PIT data from URL
+
 extract_pit <- function(url, coc_name){
   # url of pdf file
   location <- url
@@ -32,8 +34,7 @@ extract_pit <- function(url, coc_name){
   reference_df <- as.data.frame(bound)
   df <- as.data.frame(reference_df[-c(1:3, 8, 18:20, 23:24, 29:30, 37:40, 42, 46:47), ])
   
-  # TO-Do: deal with the fact that tabulizer doesn't treat the pdfs equally...then apply the function to the list of counties/urls
-  
+
   df1 <- df %>%
     mutate(CoC = coc_name) %>%
     select("CoC",'pop_category', 'emergency_shelter', 'transitional_housing', 'unsheltered')
