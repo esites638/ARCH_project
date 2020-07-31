@@ -1,4 +1,5 @@
 # function to extract PIT data from URL
+library(tabulizer)
 
 extract_pit <- function(url, coc_name){
   # url of pdf file
@@ -43,5 +44,3 @@ extract_pit <- function(url, coc_name){
   
 }
 
-out.matrix <- extract_pit('https://files.hudexchange.info/reports/published/CoC_PopSub_CoC_CA-501-2019_CA_2019.pdf', "SF")
-View(out.matrix)

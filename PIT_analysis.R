@@ -29,3 +29,22 @@ Total_homeless_by_CoC_chart <-
   labs(title ="2019 Point in Time Data", x = "Continuum of Care", y = "Total Homeless Persons") +
   scale_fill_discrete(name = "Category", labels = c("Emergency Shelter", "Transitional Housing", "Unsheltered")) +
   theme(legend.position = "bottom")
+
+# CoC's to counties
+CoCs_to_counties <- read_csv("CoCs_to_counties.csv")
+
+# entire df with counties
+df_by_county <- left_join(CoCs_to_counties, long_final_df, by="CoC")
+write.csv(df_by_county, "PIT_by_county.csv")
+
+#just homeless totals with counties
+df_by_county2 <- left_join(CoCs_to_counties, long_Total_homeless_by_CoC, by="CoC") %>%
+  select(-pop_category) %>%
+  group_by(CoC) %>%
+  summarize(total_homeless_people_per_CoC = sum(count_people))
+
+write.csv(df_by_county2, "PIT_total_homeless_by_coc.csv")
+
+
+
+sapply(df_by_county, function(x) sum(is.na(x)))
