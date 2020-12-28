@@ -1,29 +1,10 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This repository hosts the code and data used in the Addressing Rural Communities and Homelessness (ARCH) Project done by Health Leads in partnership with Dignity Health. The goal of this phase of the project is to analyze and visualize data on indicators of homelessness and housing insecurity in rural California in order to understand the landscape of essential needs throughout the state. We aimed to make data analysis as accessible as possible, and so used publicly-available data and create publicly-available and accessible data vizualization tools. 
 
-### What is this repository for? ###
+The final data vizualizations are publicly available on the analyst's Tableau Public page: 
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+https://public.tableau.com/views/MapViewerforAddressingRuralCommunitiesandHomelessness/ComparingIndicators?:language=en&:display_count=y&:origin=viz_share_link
 
-### How do I get set up? ###
+https://public.tableau.com/views/HHI_maps/NavigationPane?:language=en&:display_count=y&:origin=viz_share_link
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
