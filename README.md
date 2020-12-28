@@ -8,3 +8,6 @@ https://public.tableau.com/views/MapViewerforAddressingRuralCommunitiesandHomele
 
 https://public.tableau.com/views/HHI_maps/NavigationPane?:language=en&:display_count=y&:origin=viz_share_link
 
+# Using Point-in-time data - converting_pit_script.R #
+
+Data on homelessness is vital to understanding the magnitude of need in California, but such data is also notoriously difficult to find and access. The annual Poin-in-Time count is the most complete data set on where people are unsheltered or in transitional/emergency shelter. The bulk of this project's work was in converting the multiple PDF reports into machine-readable data that could be used for analysis and vizualization. Converting_pit_script.R contains the code used to map the tabulizer function over multiple, irregular PDF files. 
